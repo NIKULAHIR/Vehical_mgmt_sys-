@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+        <record id="buyer_form_view" model="ir.ui.view">
+                <field name="name">buyer form view</field>
+                <field name="model">buyer.data</field>
+                <field name="arch" type="xml">
+                    <form string="Buyer Information" >
+
+                        <header>
+                            <field name="state" widget="statusbar" readonly="True"/>
+                        </header>
+
+                        <group>
+                            <field name="name"/>
+                            <field name="seller_id"/>
+                            <field name="entity_id"/>
+                            <field name="aggrement_data"/>
+
+                        </group>
+                    </form>
+                </field>
+        </record>
+
+        <record id="buyer_list_view" model="ir.ui.view">
+            <field name="name">buyer list view</field>
+            <field name="model">buyer.data</field>
+            <field name="arch" type="xml">
+                <tree string="buyer Information">
+                            <field name="name"/>
+                            <field name="entity_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_buyer_data" model="ir.actions.act_window">
+            <field name="name">Buyer</field>
+            <field name="res_model">buyer.data</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="buyer_data_info" name="buyer" action="action_buyer_data"
+                  parent="seller_root_deatils"/>
+
+
+
+
+    </data>
+</flectra>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+        <record id="patient_form_view" model="ir.ui.view">
+                <field name="name">patient form view</field>
+                <field name="model">patient.data</field>
+                <field name="arch" type="xml">
+                    <form string="patient Information" >
+                        <header>
+                            <field name="state" widget="statusbar" nolabel="1" />
+                        </header>
+
+                        <group>
+                            <field name="name"/>
+                            <field name="address"/>
+                            <field name="appoimnt_date"/>
+                            <field name="disease"/>
+                            <field name="doctore_id"/>
+                        </group>
+
+                    </form>
+                </field>
+        </record>
+
+        <record id="patient_list_view" model="ir.ui.view">
+            <field name="name">patient list view</field>
+            <field name="model">patient.data</field>
+            <field name="arch" type="xml">
+                <tree string="patient Information">
+                            <field name="name"/>
+                            <field name="disease"/>
+                            <field name="appoimnt_date"/>
+                            <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="actio_patient_data" model="ir.actions.act_window">
+            <field name="name">Patient</field>
+            <field name="res_model">patient.data</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+         <record id="patient_data_search_view" model="ir.ui.view" >
+            <field name="name">Patiient.search</field>
+            <field name="model">patient.data</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="appoimnt_date" />
+                    <filter string="Name" name="name" domain="[('name','=','h')]"/>
+                    <filter string="Appoimnt on" name="appoimnt_date" domain="[('appoimnt_date','!=','05/05/2019')]"/>
+                </search>
+            </field>
+        </record>
+
+        <menuitem id="patient_root" name="patient data"/>
+        <menuitem id="patient_root_deatils" name="Patient Details" parent="patient_root"/>
+        <menuitem id="patienyt_data_info" name="patiest" action="actio_patient_data"
+                  parent="patient_root_deatils"/>
+    </data>
+</flectra>

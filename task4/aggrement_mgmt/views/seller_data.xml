@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+        <record id="seller_form_view" model="ir.ui.view">
+                <field name="name">seller form view</field>
+                <field name="model">seller.data</field>
+                <field name="arch" type="xml">
+                    <form string="seller Information" >
+
+                        <header>
+                            <field name="state" widget="statusbar" readonly="True"/>
+
+                            
+                        </header>
+
+                        <group>
+                            <field name="name"/>
+                            <field name="entity_ids"/>
+                            <field name="buyer_line"/>
+                            <field name="aggrement_data"/>
+
+                        </group>
+                    </form>
+                </field>
+        </record>
+
+        <record id="seller_list_view" model="ir.ui.view">
+            <field name="name">seller list view</field>
+            <field name="model">seller.data</field>
+            <field name="arch" type="xml">
+                <tree string="Seller Information">
+                            <field name="name"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_seller_data" model="ir.actions.act_window">
+            <field name="name">Seller</field>
+            <field name="res_model">seller.data</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="seller_root" name="Aggrement mgmt System"/>
+        <menuitem id="seller_root_deatils" name=" System Details" parent="seller_root"/>
+        <menuitem id="seller_data_info" name="seller" action="action_seller_data"
+                  parent="seller_root_deatils"/>
+
+
+
+
+    </data>
+</flectra>

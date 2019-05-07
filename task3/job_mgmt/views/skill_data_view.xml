@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+        <record id="skill_form_view" model="ir.ui.view">
+                <field name="name">skill form view</field>
+                <field name="model">skill.data</field>
+                <field name="arch" type="xml">
+                    <form string="Skill Information" >
+
+                        <header>
+                            <field name="name" widget="statusbar" nolabel="1"/>
+                        </header>
+
+                        <group>
+                            <field name="name"/>
+
+                        </group>
+                    </form>
+                </field>
+
+        </record>
+
+
+        <record id="skill_list_view" model="ir.ui.view">
+            <field name="name">Skill list view</field>
+            <field name="model">skill.data</field>
+            <field name="arch" type="xml">
+                <tree string="Skill Information">
+
+                            <field name="name"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="actio_skill_data" model="ir.actions.act_window">
+            <field name="name">Skill</field>
+            <field name="res_model">skill.data</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="skill_data_info" name="skill" action="actio_skill_data"
+                  parent="company_root_deatils"/>
+
+
+
+
+    </data>
+</flectra>

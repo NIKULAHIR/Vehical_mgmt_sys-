@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+        <record id="entity_form_view" model="ir.ui.view">
+                <field name="name">entity form view</field>
+                <field name="model">entity.data</field>
+                <field name="arch" type="xml">
+                    <form string="Entity Information" >
+
+                        <header>
+                            <field name="name" widget="statusbar" readonly="True"/>
+                        </header>
+
+                        <group>
+                            <field name="name"/>
+                            <field name="seller_id"/>
+                        </group>
+                    </form>
+                </field>
+        </record>
+
+        <record id="entity_list_view" model="ir.ui.view">
+            <field name="name">Entity list view</field>
+            <field name="model">entity.data</field>
+            <field name="arch" type="xml">
+                <tree string="Entity Information">
+                            <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_entity_data" model="ir.actions.act_window">
+            <field name="name">Entity</field>
+            <field name="res_model">entity.data</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="entity_data_info" name="Entity" action="action_entity_data"
+                  parent="seller_root_deatils"/>
+
+    </data>
+</flectra>

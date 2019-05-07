@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+        <record id="company_form_view" model="ir.ui.view">
+                <field name="name">company form view</field>
+                <field name="model">company.data</field>
+                <field name="arch" type="xml">
+                    <form string="Company Information" >
+
+                        <header>
+                            <field name="name" widget="statusbar" nolabel="1"/>
+                        </header>
+
+                        <group>
+                            <field name="name"/>
+
+                        </group>
+                    </form>
+                </field>
+
+        </record>
+
+
+        <record id="company_list_view" model="ir.ui.view">
+            <field name="name">Company list view</field>
+            <field name="model">company.data</field>
+            <field name="arch" type="xml">
+                <tree string="Company Information">
+
+                            <field name="name"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="actio_company_data" model="ir.actions.act_window">
+            <field name="name">Comapny</field>
+            <field name="res_model">company.data</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+
+
+
+
+
+
+
+
+        <menuitem id="company_root" name="Company Data"/>
+        <menuitem id="company_root_deatils" name="Company Details" parent="company_root"/>
+        <menuitem id="company_data_info" name="Company" action="actio_company_data"
+                  parent="company_root_deatils"/>
+
+
+
+
+    </data>
+</flectra>

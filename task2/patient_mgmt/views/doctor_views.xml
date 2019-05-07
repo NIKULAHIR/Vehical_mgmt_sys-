@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+        <record id="doctor_form_view" model="ir.ui.view">
+                <field name="name">Doctor form view</field>
+                <field name="model">doctor.data</field>
+                <field name="arch" type="xml">
+                    <form string="Vehical Information" >
+                        <header>
+                              <button name="state_pending"  string="Pending"   type="object"  class="oe_highlight"/>
+                              <button name="state_confirm"  type="object"  string="Confirm" class="oe_highlight"/>
+                              <button name="state_rejected"  type="object"   string="reject" class="oe_highlight"/>
+                              <field name="state" widget="statusbar" nolabel="1" />
+                        </header>
+
+                        <group>
+                            <field name="name"/>
+                            <field name="appoimnt_date"/>
+                            <field name="disease_ids"/>
+                            <field name="patient_line"/>
+                        </group>
+                    </form>
+                </field>
+        </record>
+
+        <record id="doctor_list_view" model="ir.ui.view">
+            <field name="name">doctor list view</field>
+            <field name="model">doctor.data</field>
+            <field name="arch" type="xml">
+                <tree string="vehical Information">
+                            <field name="name"/>
+                            <field name="appoimnt_date"/>
+                            <field name="disease_ids"/>
+                            <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="actio_doctor_data" model="ir.actions.act_window">
+            <field name="name">Doctore</field>
+            <field name="res_model">doctor.data</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="actio_doctor_root" name="doctore data"/>
+        <menuitem id="doctor_root_deatils" name="doctore Details" parent="actio_doctor_root"/>
+        <menuitem id="doctore_data_info" name="doctore" action="actio_doctor_data"
+                  parent="patient_root_deatils"/>
+    </data>
+</flectra>

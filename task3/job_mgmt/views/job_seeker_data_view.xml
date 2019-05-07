@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+        <record id="job_seeker_form_view" model="ir.ui.view">
+                <field name="name">JobSeeker form view</field>
+                <field name="model">job.seeker</field>
+                <field name="arch" type="xml">
+                    <form string="job seeker Information" >
+
+                        <header>
+                            <field name="name" widget="statusbar" nolabel="1"/>
+                        </header>
+
+                        <group>
+                            <field name="name"/>
+
+                        </group>
+                    </form>
+                </field>
+
+        </record>
+
+
+        <record id="job_seeker_list_view" model="ir.ui.view">
+            <field name="name">job seeker list view</field>
+            <field name="model">job.seeker</field>
+            <field name="arch" type="xml">
+                <tree string="job seeker Information">
+
+                            <field name="name"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="actio_job_seeker_data" model="ir.actions.act_window">
+            <field name="name">Job seeker</field>
+            <field name="res_model">job.seeker</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+         <menuitem id="job_seeker_data_info" name="job seeker" action="actio_job_seeker_data"
+                  parent="company_root_deatils"/>
+
+
+    </data>
+</flectra>
